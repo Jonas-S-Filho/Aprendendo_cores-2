@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class SetDificuldadeActivity extends AppCompatActivity {
-    private ImageView voltarMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +20,15 @@ public class SetDificuldadeActivity extends AppCompatActivity {
 
 
         // Troca para a tela Menu
-        voltarMenu.setOnClickListener(new View.OnClickListener(){
+        ImageView voltar = (ImageView) findViewById(R.id.voltar);
+        voltar.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
+            public  void onClick(View view) {
                 menu();
             }
         });
     }
+
     public  void  menu() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

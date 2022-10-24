@@ -84,7 +84,7 @@
         app:srcCompat="@drawable/circulo_5" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/voltarconfig"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
