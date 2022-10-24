@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Aprendendo_cores</string>
+    <string name="facilBtn">Fácil</string>
+    <string name="intermediarioBtn">Intermediário</string>
+    <string name="dificilBtn">Difícil</string>
+    <string name="jogarBtn">Jogar</string>
+</resources>
