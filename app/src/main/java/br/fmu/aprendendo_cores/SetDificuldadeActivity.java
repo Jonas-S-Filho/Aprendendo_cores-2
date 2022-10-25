@@ -16,7 +16,7 @@ public class SetDificuldadeActivity extends AppCompatActivity {
 
         /* verificar qual modo(nuturno ou diurno) está ativado */
 
-        /* Imagem da seta pra esquerda */
+        /* Imagem da seta pra -esquerda */
 
 
         // Troca para a tela Menu
