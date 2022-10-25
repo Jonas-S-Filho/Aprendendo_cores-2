@@ -18,7 +18,6 @@ public class SetDificuldadeActivity extends AppCompatActivity {
 
         /* Imagem da seta pra -esquerda */
 
-
         // Troca para a tela Menu
         ImageView voltar = (ImageView) findViewById(R.id.voltar);
         voltar.setOnClickListener(new View.OnClickListener(){
