@@ -13,15 +13,19 @@ public class IntermediarioActivity extends AppCompatActivity {
     private int seq2[] = new int[images.length];*/
     private int valCor = 0;
 
+   private ImageView imageView;
+    private ImageView back01;
+    private ImageView back02;
+    private ImageView back03;
     private TextView btn1;
     private TextView btn2;
     private TextView btn3;
+    private ImageView recarregarBtn;
 
-    @Override
+    @Overrride
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intermediario);
-        /*
+        ...
+
         /* verificar qual modo(nuturno ou diurno) está ativado */
 
         /* Imagem da seta pra esquerda */
@@ -37,7 +41,8 @@ public class IntermediarioActivity extends AppCompatActivity {
         
         /* Define a imagem que vai aparecer */
         sequencia(seq1);
-    
+        
+        imageView = (ImageView) findViewById(R.id.difi2image);
         imageView.setImageResource(images[seq1[valCor]]);
 
         /* Botões */
@@ -52,9 +57,9 @@ public class IntermediarioActivity extends AppCompatActivity {
         btn2.setText(textR[seq2[1]]);
         btn3.setText(textR[seq2[2]]);
 
-        ImageView back01 = (ImageView) findViewById(R.id.back01); 
-        ImageView back02 = (ImageView) findViewById(R.id.back02);  
-        ImageView back03 = (ImageView) findViewById(R.id.back03);
+        back01 = (ImageView) findViewById(R.id.back01); 
+        back02 = (ImageView) findViewById(R.id.back02);  
+        back03 = (ImageView) findViewById(R.id.back03);
 
         back01.setOnClickListener(new View.OnClickListener(){
             @Overrride
@@ -78,7 +83,7 @@ public class IntermediarioActivity extends AppCompatActivity {
         });         
 
         /* Reset botões */
-        ImageView recarregarBtn = (ImageView) findViewById(R.id.recarregarBtnInter);
+        recarregarBtn = (ImageView) findViewById(R.id.recarregarBtnInter);
 
         // Tornar invisivel 
         recarregarBtn.setVisibility(View.INVISIBLE);
@@ -171,6 +176,6 @@ public class IntermediarioActivity extends AppCompatActivity {
             startActivity(intent);
         } else {
             imageView.setImageResource(images[seq1[valCor]]);
-        }*/
+        }
     }
 }
