@@ -86,27 +86,39 @@
         app:srcCompat="@drawable/azul_ciano" />
 
     <Button
-        android:id="@+id/btnFacil1"
+        android:id="@+id/bntFacil3"
         android:layout_width="150dp"
         android:layout_height="63dp"
-        android:text="Vermelho"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="514dp" />
+        android:text="Amarelo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.931" />
 
     <Button
         android:id="@+id/btnFacil2"
         android:layout_width="150dp"
         android:layout_height="63dp"
         android:text="Azul"
-        tools:layout_editor_absoluteX="235dp"
-        tools:layout_editor_absoluteY="601dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.931" />
 
     <Button
-        android:id="@+id/bntFacil3"
+        android:id="@+id/btnFacil1"
         android:layout_width="150dp"
         android:layout_height="63dp"
-        android:text="Amarelo"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="601dp" />
+        android:text="Vermelho"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.806" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

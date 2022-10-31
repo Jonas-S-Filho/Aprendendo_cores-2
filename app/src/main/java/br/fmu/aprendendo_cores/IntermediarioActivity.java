@@ -1,52 +1,54 @@
 package br.fmu.aprendendo_cores;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class IntermediarioActivity extends AppCompatActivity {
-    /*private static final int images[] = {R.drawable.intermediario.inter-01,R.drawable.intermediario.inter-02,R.drawable.intermediario.inter-03};
-    private static final String textR[] = {R.string.inter01, R.string.inter02}; // Talvez .values.strings
+    private static final int images[] = {R.drawable.inter_01,R.drawable.inter_02,R.drawable.inter_03};
+    /*private static final String textR[] = {R.string.inter01, R.string.inter02}; // Talvez .values.strings*/
     private int seq1[] = new int[images.length];
-    private int seq2[] = new int[images.length];*/
-    private int valCor = 0;
+    private int seq2[] = new int[images.length];
+    private int valCor = 1;
 
    private ImageView imageView;
     private ImageView back01;
     private ImageView back02;
     private ImageView back03;
-    private TextView btn1;
+    /*private TextView btn1;
     private TextView btn2;
     private TextView btn3;
     private ImageView recarregarBtn;
-
-    @Overrride
+*/
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ...
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_intermediario);
 
         /* verificar qual modo(nuturno ou diurno) está ativado */
 
         /* Imagem da seta pra esquerda */
         ImageView voltarMenu = (ImageView) findViewById(R.id.voltarMenuInter);
-        
+
         /* Troca para a tela Menu */
-         voltarMenu.setOnClickListener(new View.OnClickListener(){
+        voltarMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 menu();
             }
         });
-        
+
         /* Define a imagem que vai aparecer */
         sequencia(seq1);
-        
-        imageView = (ImageView) findViewById(R.id.difi2image);
+
+        imageView = (ImageView) findViewById(R.id.interLaranja);
         imageView.setImageResource(images[seq1[valCor]]);
 
         /* Botões */
-        btn1 = findViewById(R.id.btn1Inter); 
+        /*btn1 = findViewById(R.id.btn1Inter);
         btn2 = findViewById(R.id.btn2Inter);  
         btn3 = findViewById(R.id.btn3Inter);
 
@@ -83,7 +85,7 @@ public class IntermediarioActivity extends AppCompatActivity {
         });         
 
         /* Reset botões */
-        recarregarBtn = (ImageView) findViewById(R.id.recarregarBtnInter);
+       /* recarregarBtn = (ImageView) findViewById(R.id.recarregarBtnInter);
 
         // Tornar invisivel 
         recarregarBtn.setVisibility(View.INVISIBLE);
@@ -95,7 +97,7 @@ public class IntermediarioActivity extends AppCompatActivity {
                 reset();
             }
         });
-
+*/
     }
 
     public  void  menu() {
@@ -104,17 +106,17 @@ public class IntermediarioActivity extends AppCompatActivity {
     }
 	
     public void sequencia(int x[]) {
-        Random rand = new Random();
+       /* Random rand = new Random();
         for (int i = 0; i < images.length; i++) {
             do{
                 x[i] = rand.nextInt(images.length); 
             } while (x[i] == x[0] && x[i] == x[1]);
-        }
+        }*/
     }
 
     public void opcao1() {
         // Verificar opção e mudar de cor
-        if (textR[seq2[0]] == textR[seq1[valCor]]) {
+       /* if (textR[seq2[0]] == textR[seq1[valCor]]) {
             back01.setImageResource(R.drawable.intermediario.backGreen); // Mudar para R.drawable.imgx
             if (recarregarBtn.Visibility =! VISIBLE) {
                 proximo();
@@ -138,11 +140,11 @@ public class IntermediarioActivity extends AppCompatActivity {
             back02.setImageResource(R.drawable.intermediario.backRed);
             // Tornar imagem/botão de resetar a tela visivel
             recarregarBtn.setVisibility(View.VISIBLE);
-        }
+        }*/
     }    
 
     public void opcao3() {
-        // Verificar opção e mudar de cor
+       /* // Verificar opção e mudar de cor
         if (textR[seq2[2]] == textR[seq1[valCor]]) {
             back03.setImageResource(R.drawable.intermediario.backGreen);
             if (recarregarBtn.Visibility =! VISIBLE) {
@@ -176,6 +178,6 @@ public class IntermediarioActivity extends AppCompatActivity {
             startActivity(intent);
         } else {
             imageView.setImageResource(images[seq1[valCor]]);
-        }
+        }*/
     }
 }

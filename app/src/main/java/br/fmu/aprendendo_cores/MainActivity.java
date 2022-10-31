@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void config() {
         Intent intent = new Intent(this, ConfigActivity.class);
-        startActivity(Intent);
+        startActivity(intent);
     }
 
 

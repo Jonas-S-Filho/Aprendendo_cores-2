@@ -30,7 +30,7 @@ public class ConfigActivity extends AppCompatActivity {
             }
         });
 
-        voltar.findViewById(R.id.voltarconfig);
+        voltar = (ImageView) findViewById(R.id.voltarconfig);
         voltar.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View view) {

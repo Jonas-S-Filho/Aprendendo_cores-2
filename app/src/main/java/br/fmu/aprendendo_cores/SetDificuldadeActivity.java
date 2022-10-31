@@ -1,11 +1,11 @@
 package br.fmu.aprendendo_cores;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SetDificuldadeActivity extends AppCompatActivity {
 
@@ -40,6 +40,11 @@ public class SetDificuldadeActivity extends AppCompatActivity {
 
     public void intermediario(View view) {
         Intent intent = new Intent( this, IntermediarioActivity.class);
+        startActivity(intent);
+    }
+
+    public void dificil(View view) {
+        Intent intent = new Intent( this, DificilActivity.class);
         startActivity(intent);
     }
 
