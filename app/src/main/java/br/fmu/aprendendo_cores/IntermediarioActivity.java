@@ -7,26 +7,29 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class IntermediarioActivity extends AppCompatActivity {
-    /*private static final int images[] = {R.drawable.intermediario.inter-01,R.drawable.intermediario.inter-02,R.drawable.intermediario.inter-03};
-    private static final String textR[] = {R.string.inter01, R.string.inter02}; // Talvez .values.strings
-    private int seq1[] = new int[images.length];
-    private int seq2[] = new int[images.length];*/
+   //private static final String textR[] = {R.string.inter01, R.string.inter02}; // Talvez .values.strings
+    private int seq1[] = new int[3];
+    private int seq2[] = new int[seq1.length];
     private int valCor = 0;
 
-   private ImageView imageView;
-    private ImageView back01;
-    private ImageView back02;
-    private ImageView back03;
-    private TextView btn1;
-    private TextView btn2;
-    private TextView btn3;
+    private ImageView imageView1;
+    private ImageView imageView2;
+    private ImageView imageView3;
+    private ButtonView btn1;
+    private ButtonView btn2;
+    private ButtonView btn3;
+    private ButtonView btn4;
+    private ButtonView btn5;
+    private ButtonView btn6;
+    private ButtonView btn7;
+    private ButtonView btn8;
+    private ButtonView btn9;
     private ImageView recarregarBtn;
 
     @Overrride
     protected void onCreate(Bundle savedInstanceState) {
-        ...
-
-        /* verificar qual modo(nuturno ou diurno) está ativado */
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_intermediario);
 
         /* Imagem da seta pra esquerda */
         ImageView voltarMenu = (ImageView) findViewById(R.id.voltarMenuInter);
@@ -42,47 +45,38 @@ public class IntermediarioActivity extends AppCompatActivity {
         /* Define a imagem que vai aparecer */
         sequencia(seq1);
         
-        imageView = (ImageView) findViewById(R.id.difi2image);
-        imageView.setImageResource(images[seq1[valCor]]);
+        imageView1 = (ImageView) findViewById(R.id.difi2image1);
+        imageView2 = (ImageView) findViewById(R.id.difi2image2);
+        imageView3 = (ImageView) findViewById(R.id.difi2image3);
+
+	// Seleciona a primeira imagem
+        imagemCor();
 
         /* Botões */
         btn1 = findViewById(R.id.btn1Inter); 
         btn2 = findViewById(R.id.btn2Inter);  
         btn3 = findViewById(R.id.btn3Inter);
-
+        btn4 = findViewById(R.id.btn4Inter);
+        btn5 = findViewById(R.id.btn5Inter);
+        btn6 = findViewById(R.id.btn6Inter);
+        btn7 = findViewById(R.id.btn7Inter);
+        btn8 = findViewById(R.id.btn8Inter);
+        btn9 = findViewById(R.id.btn9Inter);
+	    
         // Criar possições aleatórias
         sequencia(seq2);
 
-        btn1.setText(textR[seq2[0]]);
+        btn1.setText(textR[seq2[0]]); // Cor padrão
+        btn4.setText(textR[seq2[0]]); // Verde
+        btn7.setText(textR[seq2[0]]); // Vermelho
         btn2.setText(textR[seq2[1]]);
+        btn5.setText(textR[seq2[1]]);
+        btn8.setText(textR[seq2[1]]);
         btn3.setText(textR[seq2[2]]);
-
-        back01 = (ImageView) findViewById(R.id.back01); 
-        back02 = (ImageView) findViewById(R.id.back02);  
-        back03 = (ImageView) findViewById(R.id.back03);
-
-        back01.setOnClickListener(new View.OnClickListener(){
-            @Overrride
-            public void onClick(View v) {
-               opcao1();
-            }
-        });
-
-        back02.setOnClickListener(new View.OnClickListener(){
-            @Overrride
-            public void onClick(View v) {
-               opcao2();
-            }
-        });
-
-        back03.setOnClickListener(new View.OnClickListener(){
-            @Overrride
-            public void onClick(View v) {
-               opcao3();
-            }
-        });         
-
-        /* Reset botões */
+        btn6.setText(textR[seq2[2]]);
+        btn9.setText(textR[seq2[2]]);
+        
+        /* Botão de reset */
         recarregarBtn = (ImageView) findViewById(R.id.recarregarBtnInter);
 
         // Tornar invisivel 
@@ -91,7 +85,6 @@ public class IntermediarioActivity extends AppCompatActivity {
         recarregarBtn.setOnClickListener(new View.OnClickListener(){
             @Overrride
             public void onClick(View v) {
-                // onCreate();
                 reset();
             }
         });
@@ -112,16 +105,39 @@ public class IntermediarioActivity extends AppCompatActivity {
         }
     }
 
+    public void imagemCor() {
+        switch (seq1[valCor]) {
+            case 0: 
+                imageView1.setVisibility(View.VISIBLE);
+                imageView2.setVisibility(View.INVISIBLE);
+                imageView3.setVisibility(View.INVISIBLE);
+                break;
+            case 1: 
+                imageView2.setVisibility(View.VISIBLE);
+                imageView1.setVisibility(View.INVISIBLE);
+                imageView3.setVisibility(View.INVISIBLE);
+                break;
+            case 2: 
+                imageView3.setVisibility(View.VISIBLE);
+                imageView1.setVisibility(View.INVISIBLE);
+                imageView2.setVisibility(View.INVISIBLE);
+                break;
+        }
+    }
+
     public void opcao1() {
         // Verificar opção e mudar de cor
         if (textR[seq2[0]] == textR[seq1[valCor]]) {
-            back01.setImageResource(R.drawable.intermediario.backGreen); // Mudar para R.drawable.imgx
+            btn1.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.VISIBLE);
+
             if (recarregarBtn.Visibility =! VISIBLE) {
                 proximo();
             }
         } else {
             // Apenas trocar para vermelho
-            back01.setImageResource(R.drawable.intermediario.backRed);
+            btn1.setVisibility(View.INVISIBLE);
+            btn7.setVisibility(View.VISIBLE);
             // Tornar imagem/botão de resetar a tela visivel
             recarregarBtn.setVisibility(View.VISIBLE);
         }
@@ -130,12 +146,15 @@ public class IntermediarioActivity extends AppCompatActivity {
     public void opcao2() {
         // Verificar opção e mudar de cor
         if (textR[seq2[1]] == textR[seq1[valCor]]) {
-            back02.setImageResource(R.drawable.intermediario.backGreen);
+            btn2.setVisibility(View.INVISIBLE);
+            btn5.setVisibility(View.VISIBLE);
+
             if (recarregarBtn.Visibility =! VISIBLE) {
                 proximo();
             }
         } else {
-            back02.setImageResource(R.drawable.intermediario.backRed);
+            btn2.setVisibility(View.INVISIBLE);
+            btn8.setVisibility(View.VISIBLE);
             // Tornar imagem/botão de resetar a tela visivel
             recarregarBtn.setVisibility(View.VISIBLE);
         }
@@ -144,12 +163,15 @@ public class IntermediarioActivity extends AppCompatActivity {
     public void opcao3() {
         // Verificar opção e mudar de cor
         if (textR[seq2[2]] == textR[seq1[valCor]]) {
-            back03.setImageResource(R.drawable.intermediario.backGreen);
+            btn3.setVisibility(View.INVISIBLE);
+            btn6.setVisibility(View.VISIBLE);
+
             if (recarregarBtn.Visibility =! VISIBLE) {
                 proximo();
             }
         } else {
-            back03.setImageResource(R.drawable.intermediario.backRed);
+            btn3.setVisibility(View.INVISIBLE);
+            btn9.setVisibility(View.VISIBLE);
             // Tornar imagem/botão de resetar a tela visivel
             recarregarBtn.setVisibility(View.VISIBLE);
         }
@@ -157,25 +179,30 @@ public class IntermediarioActivity extends AppCompatActivity {
 
     public void reset() {
         // Tornar todos os fundos pretos
-        back01.setImageResource(R.drawable.intermediario.backGrey);
-        back02.setImageResource(R.drawable.intermediario.backGrey);
-        back03.setImageResource(R.drawable.intermediario.backGrey);
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+        btn5.setVisibility(View.INVISIBLE);
+        btn6.setVisibility(View.INVISIBLE);
+        btn7.setVisibility(View.INVISIBLE);
+        btn8.setVisibility(View.INVISIBLE);
+        btn9.setVisibility(View.INVISIBLE);
+
         // Tornar imagem/botão de resetar a tela invisivel
         recarregarBtn.setVisibility(View.INVISIBLE);
     }
 
     public void proximo() {
         // Resetar botões
-        back01.setImageResource(R.drawable.intermediario.backGrey);
-        back02.setImageResource(R.drawable.intermediario.backGrey);
-        back03.setImageResource(R.drawable.intermediario.backGrey);
+       reset();
         // Incrementar valCor para trocar a imagem da cor
         valCor++;
-        if (valCor >= images.length) {
-            Intent intent = new Intent( this, Parabens.class);
-            startActivity(intent);
+        if (valCor >= seq1.length) {
+            //Intent intent = new Intent( this, Parabens.class);
+            //startActivity(intent);
         } else {
-            imageView.setImageResource(images[seq1[valCor]]);
+            imagemCor();
         }
     }
 }
